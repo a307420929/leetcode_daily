@@ -18,6 +18,16 @@ module.exports = {
             template: './public/index.html'
         })
     ],
+    module: {
+        rules: [{
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            options: {
+                presets: ["latest"]
+            }
+        }, ]
+    },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,

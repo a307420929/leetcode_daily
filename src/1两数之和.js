@@ -18,7 +18,7 @@ var twoSum = function (nums, target) {
     return [];
 };
 
-let nums = [2, 6, 5, 4, 1]
+let nums = [2, 7, 5, 4, 1]
 let target = 9
 let a = twoSum(nums, target)
-console.log(a)
+console.log(a) // [0,1]
