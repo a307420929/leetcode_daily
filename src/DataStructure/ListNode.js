@@ -20,21 +20,19 @@ export class LinkedList {
         this.head = null;
     }
     append(element) {
-        var node = new Node(element)
-        if (this.head == null) {
-            this.head = node
-        } else {
-            var current = head;
-            while (current.next) {
-                current = current.next
-            }
-            current.next = node
+        var newNode = new Node(element);
+        if(!this.head){
+            this.head = newNode;
+        }else{
+           let current = this.head
+           while(current.next){
+               current = current.next;
+           }
+           current.next = newNode
         }
-        length++
+        this.length++
     }
     getHead() {
         return this.head
     }
 }
-
-

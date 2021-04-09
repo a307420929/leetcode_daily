@@ -9,6 +9,9 @@ import {LinkedList} from './src/DataStructure/ListNode'
 
 
 
-var a = new LinkedList
-console.log(a)
-// console.log(a)
+var linkedList = new LinkedList()
+linkedList.append('aaa')
+linkedList.append('bbb')
+linkedList.append('ccc')
+linkedList.append('ddd')
+console.log(linkedList)
