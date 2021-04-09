@@ -1,0 +1,26 @@
+import {
+    Compiler
+} from "webpack";
+
+class Compile {
+    constructor(el, vm) {
+        this.el = this.isElementNode(el) ? el : document.querySelector(el)
+        this.vm = vm
+        // 1.获取文档碎片对象，放入内存中会减少页面的回流和重绘
+    }
+    isElementNode(node) {
+        return node.nodeType === 1;
+    }
+}
+class MVue {
+    constructor(options) {
+        this.$el = options.el;
+        this.$data = options.data;
+        this.$options = options;
+        if (this.$el) {
+            // 1.实现一个数据的观察者
+            // 2.实现一个指令的解析器
+            new Compiler(this.$el, this)
+        }
+    }
+}
