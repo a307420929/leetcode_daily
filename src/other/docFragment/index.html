@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test">
+
+    </div>
+</body>
+<script>
+    var a = document.getElementById('test')
+    var oF = document.createDocumentFragment()
+    var before = Date.now();
+    for (let i = 0; i < 100000; i++) {
+        var li = document.createElement("li");
+        var oText = document.createTextNode(i)
+        li.appendChild(oText)
+        oF.appendChild(li)
+    }
+    a.appendChild(oF)
+    // for (let i = 0; i < 100000; i++) {
+    //     var li = document.createElement("li");
+    //     li.innerHTML = i;
+    //     a.appendChild(li)
+    // }
+    console.log('花费了: ' + (Date.now() - before)+'ms')
+</script>
+
+</html>
